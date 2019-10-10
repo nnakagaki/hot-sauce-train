@@ -7,8 +7,10 @@
 <body>
   <button id="js-move-it">Move the hot sauce train!!!</button>
   <script>
-    $('#js-move-it').onClick(function() {
-      console.log('hmmm');
+    $('#js-move-it').click(function() {
+      $.ajax({
+        url : '/move-the-train'
+      });
     });
   </script>
 </body>
