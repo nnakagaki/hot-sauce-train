@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
 
 <body>
-  hello!
+  <button id="js-move-it">Move the hot sauce train!!!</button>
+  <script>
+    $('#js-move-it').click(function() {
+      $.ajax({
+        url : '/move-the-train'
+      });
+    });
+  </script>
 </body>
 </html>
