@@ -1,0 +1,31 @@
+body {
+  text-align: center;
+  font-family: sans-serif;
+  padding: 40px 0;
+}
+button {
+  outline: 0;
+  cursor: pointer;
+}
+h1 {
+  margin-bottom: 40px;
+}
+.move-button {
+  grid-area: button;
+  margin: 0 30px 40px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 992px) {
+  .buttons {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}

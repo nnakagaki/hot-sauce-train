@@ -2,13 +2,19 @@
 <html>
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="reset.css" />
+  <link rel = "stylesheet" type = "text/css" href = "styles.css" />
+ </head>
 </head>
 
 <body>
-  <button class="js-move-it" data-stop="1">Stop 1</button>
-  <button class="js-move-it" data-stop="2">Stop 2</button>
-  <button class="js-move-it" data-stop="3">Stop 3</button>
-  <button class="js-move-it" data-stop="4">Stop 4</button>
+  <h1>CHOOSE A STOP</h1>
+  <div class="buttons">
+    <button class="js-move-it move-button" data-stop="1">1</button>
+    <button class="js-move-it move-button" data-stop="2">2</button>
+    <button class="js-move-it move-button" data-stop="3">3</button>
+    <button class="js-move-it move-button" data-stop="4">4</button>
+  </div>
   <script>
     $('.js-move-it').click(function(e) {
       var stopNumber = $(event.target).data('stop');
