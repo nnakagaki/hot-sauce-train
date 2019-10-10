@@ -1,0 +1,82 @@
+@font-face {
+font-family: "HighwayGothicNarrow";
+src: url("../fonts/HighwayGothicNarrow.woff");
+src:
+url("../fonts/HighwayGothicNarrow.woff") format("woff"),
+url("../fonts/HighwayGothicNarrow.svg#filename") format("svg");
+}
+body {
+  background: #d74005;
+  text-align: center;
+  font-family: HighwayGothicNarrow, Arial, sans-serif;
+}
+button {
+  outline: 0;
+  cursor: pointer;
+  font-family: HighwayGothicNarrow, Arial, sans-serif;
+}
+h1 {
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+.banner {
+  background: #ffffff;
+  height: 70px;
+  margin-bottom: 70px;
+}
+.logo {
+  width: 110px;
+}
+.move-button {
+  grid-area: button;
+  margin: 0 16px 32px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23);
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  color: #008631;
+  font-size: 50px;
+  position: relative;
+  border:none;
+  transition: .3s all ease;
+  background: #ffffff;
+}
+.move-button:before {
+  content: " ";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border: 3px solid #f50000;
+  border-radius: 50%;
+}
+.move-button:hover {
+  background:  #008631;
+  color: #ffffff;
+  transition: .2s all ease;
+}
+.move-button:hover:before {
+  border-color: #ffffff;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 767px) {
+  .buttons {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .move-button:nth-of-type(odd) {
+    margin-left: 0;
+    margin-right: 32px;
+  }
+  .move-button:nth-of-type(even) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
