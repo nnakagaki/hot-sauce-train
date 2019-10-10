@@ -5,12 +5,14 @@
 </head>
 
 <body>
-  <button id="js-move-it">Move the hot sauce train!!!</button>
+  <button class="js-move-it" data-stop="1">Stop 1</button>
+  <button class="js-move-it" data-stop="2">Stop 2</button>
+  <button class="js-move-it" data-stop="3">Stop 3</button>
+  <button class="js-move-it" data-stop="4">Stop 4</button>
   <script>
-    $('#js-move-it').click(function() {
-      $.ajax({
-        url : '/move-the-train'
-      });
+    $('.js-move-it').click(function(e) {
+      var stopNumber = $(event.target).data('stop');
+      $.post("/move-the-train", { stopNumber });
     });
   </script>
 </body>
