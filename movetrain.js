@@ -1,3 +1,3 @@
 module.exports = function(stopNumber) {
-  console.log(stopNumber);
+  console.log('moving')
 }

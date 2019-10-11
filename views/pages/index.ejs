@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="css/reset.css" />
   <link rel = "stylesheet" type = "text/css" href = "css/styles.css" />
@@ -25,22 +26,24 @@
   </div>
   <p class="fact" id="fact"></p>
   <script>
-    setTimeout(function() { $('#loading').fadeOut() }, 1000);
+    setTimeout(function () { $('#loading').fadeOut() }, 1000);
     var facts = [
-        "The sweaty reaction you get when indulging in hot sauce is called gustatory perspiration",
-        "Chili peppers are one of the world’s oldest known spices",
-        "The Mayans rubbed chilis on their gums to remove toothaches",
-        "Hot sauce cost $1 a bottle in 1868, equivalent to a month’s rent at the time",
-        "President Bush almost died choking on a hot sauce covered pretzel",
-        "Hot sauce production is the 8th fastest growing industry in the United States",
-        "Over 54% of households have hot sauce in their pantry",
-        "Chili peppers contain more vitamin A than carrots",
-        "When hot sauce activates your pain receptors, your brain releases endorphins",
-        "The first commercially available hot sauce was distributed in cologne bottles"
-      ]
+      "The sweaty reaction you get when indulging in hot sauce is called gustatory perspiration",
+      "Chili peppers are one of the world’s oldest known spices",
+      "The Mayans rubbed chilis on their gums to remove toothaches",
+      "Hot sauce cost $1 a bottle in 1868, equivalent to a month’s rent at the time",
+      "President Bush almost died choking on a hot sauce covered pretzel",
+      "Hot sauce production is the 8th fastest growing industry in the United States",
+      "Over 54% of households have hot sauce in their pantry",
+      "Chili peppers contain more vitamin A than carrots",
+      "When hot sauce activates your pain receptors, your brain releases endorphins",
+      "The first commercially available hot sauce was distributed in cologne bottles"
+    ]
+    var socket = io();
+
     $('.js-move-it').click(function(e) {
       var stopNumber = $(event.target).data('stop');
-      $.post("/move-the-train", { stopNumber });
+      socket.emit("move", stopNumber);
       $('#fact').hide().html(facts[Math.floor(Math.random() * 10)]).fadeIn('fast');
     });
   </script>
