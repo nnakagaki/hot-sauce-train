@@ -43,6 +43,7 @@
 
     $('.js-move-it').click(function(e) {
       var stopNumber = $(event.target).data('stop');
+      console.log('moving train', stopNumber);
       socket.emit("move", stopNumber);
       $('#fact').hide().html(facts[Math.floor(Math.random() * 10)]).fadeIn('fast');
     });
