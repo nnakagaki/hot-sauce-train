@@ -23,6 +23,8 @@
     <button class="js-move-it move-button" data-stop="2">2</button>
     <button class="js-move-it move-button" data-stop="3">3</button>
     <button class="js-move-it move-button" data-stop="4">4</button>
+
+    <button class="js-stop move-button">no</button>
   </div>
   <p class="fact" id="fact"></p>
   <script>
@@ -47,6 +49,9 @@
       socket.emit("move", stopNumber);
       $('#fact').hide().html(facts[Math.floor(Math.random() * 10)]).fadeIn('fast');
     });
+    $('.js-stop').click(function() {
+      socket.emit("stop");
+    })
   </script>
 </body>
 </html>

@@ -22,4 +22,7 @@ io.on('connection', function (socket) {
   socket.on('move', function (stopNumber) {
     socket.broadcast.emit('movetrain', stopNumber);
   });
+  socket.on('stop', function (stopNumber) {
+    socket.broadcast.emit('stop');
+  });
 });
