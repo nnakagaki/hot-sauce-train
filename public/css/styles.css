@@ -17,7 +17,7 @@ button {
   font-family: HighwayGothicNarrow, Arial, sans-serif;
 }
 h1 {
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   font-size: 28px;
 }
 .banner {
@@ -45,34 +45,61 @@ h1 {
   margin-top: 3px;
   width: 110px;
 }
+.icon {
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
 .interactive-button {
-  grid-area: button;
-  margin: 0 16px 32px;
+  margin-bottom: 17px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23);
   border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  color: #008631;
-  font-size: 50px;
+  width: 108px;
+  height: 108px;
+  color: #f50000;
+  font-size: 27px;
   position: relative;
   border:none;
-  transition: .3s all ease;
+  transition: .2s all ease;
   background: #ffffff;
+}
+.green-button {
+  color: #008631;
+  padding-top: 48px;
 }
 .interactive-button:before {
   content: " ";
   position: absolute;
-  top: 3px;
-  left: 3px;
-  right: 3px;
-  bottom: 3px;
-  border: 3px solid #f50000;
+  top: 2.75px;
+  left: 2.75px;
+  right: 2.75px;
+  bottom: 2.75px;
+  border: 2.75px solid #f50000;
   border-radius: 50%;
 }
 .interactive-button:hover {
-  background:  #008631;
+  background:  #f50000;
   color: #ffffff;
   transition: .2s all ease;
+}
+.green-fill {
+  fill: #008631;
+  transition: .2s all ease;
+}
+.red-fill {
+  fill: #f50000;
+  transition: .2s all ease;
+}
+.interactive-button:hover .green-fill,
+.interactive-button:hover .red-fill {
+  fill: #ffffff;
+  transition: .2s all ease;
+}
+.green-button:hover {
+  background:  #008631;
+}
+.green-button:before {
+  border-color:  #008631;
 }
 .interactive-button:hover:before {
   border-color: #ffffff;
@@ -80,7 +107,6 @@ h1 {
 .buttons {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
 }
 .fact {
   padding: 0 20px;
@@ -99,17 +125,17 @@ h1 {
 .loading img {
   width: 230px;
 }
+@media screen and (min-width: 768px) {
+  .interactive-button {
+    margin: 0 17px;
+  }
+}
 @media screen and (max-width: 767px) {
+  .interactive-button {
+    margin-bottom: 17px;
+  }
   .buttons {
-    max-width: 320px;
-    margin: 0 auto;
-  }
-  .interactive-button:nth-of-type(odd) {
-    margin-left: 0;
-    margin-right: 32px;
-  }
-  .interactive-button:nth-of-type(even) {
-    margin-left: 0;
-    margin-right: 0;
+    flex-direction: column;
+    align-items: center;
   }
 }
