@@ -90,7 +90,8 @@
     }
 
     $('.js-move-it').click(function(e) {
-      var stopNumber = $(event.target).data('stop');
+      var stopNumber = $(event.currentTarget).data('stop');
+      console.log(stopNumber);
       socket.emit("move", stopNumber);
       showFact();
     });
