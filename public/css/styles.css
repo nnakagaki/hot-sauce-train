@@ -129,6 +129,9 @@ h1 {
   .interactive-button {
     margin: 0 17px;
   }
+  .fact {
+    margin-top: 17px;
+  }
 }
 @media screen and (max-width: 767px) {
   .interactive-button {
