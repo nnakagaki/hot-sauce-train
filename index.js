@@ -21,6 +21,6 @@ app.use(bodyParser.urlencoded({
 io.on('connection', function (socket) {
   socket.on('move', function (stopNumber) {
     console.log('moving train', stopNumber);
-    socket.emit('moveTrain', stopNumber);
+    socket.emit('movetrain', stopNumber);
   });
 });
