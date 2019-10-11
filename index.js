@@ -20,6 +20,6 @@ app.use(bodyParser.urlencoded({
 
 io.on('connection', function (socket) {
   socket.on('move', function (stopNumber) {
-    socket.emit('movetrain', stopNumber);
+    socket.broadcast.emit('movetrain', stopNumber);
   });
 });
