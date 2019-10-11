@@ -19,12 +19,14 @@
   <span class="box-shadow"></span>
   <h1>CHOOSE A STOP</h1>
   <div class="buttons">
-    <button class="js-move-it move-button" data-stop="1">1</button>
-    <button class="js-move-it move-button" data-stop="2">2</button>
-    <button class="js-move-it move-button" data-stop="3">3</button>
-    <button class="js-move-it move-button" data-stop="4">4</button>
+    <!-- <button class="js-move-it interactive-button" data-stop="1">1</button>
+    <button class="js-move-it interactive-button" data-stop="2">2</button>
+    <button class="js-move-it interactive-button" data-stop="3">3</button>
+    <button class="js-move-it interactive-button" data-stop="4">4</button> -->
 
-    <button class="js-stop move-button">no</button>
+    <button class="js-move-it interactive-button" data-stop="1">Go</button>
+    <button class="js-move-it interactive-button" data-stop="4">Turn</button>
+    <button class="js-stop interactive-button">Stop</button>
   </div>
   <p class="fact" id="fact"></p>
   <script>
@@ -43,14 +45,19 @@
     ]
     var socket = io();
 
+    var showFact = function() {
+      $('#fact').hide().html(facts[Math.floor(Math.random() * 10)]).fadeIn('fast');
+    }
+
     $('.js-move-it').click(function(e) {
       var stopNumber = $(event.target).data('stop');
-      console.log('moving train', stopNumber);
       socket.emit("move", stopNumber);
-      $('#fact').hide().html(facts[Math.floor(Math.random() * 10)]).fadeIn('fast');
+      showFact();
     });
+
     $('.js-stop').click(function() {
-      socket.emit("stop");
+      socket.emit("stop")
+      showFact();
     })
   </script>
 </body>
